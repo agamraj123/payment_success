@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix[0].size();
+        int n = matrix.size();
+        int low = 0,high = m-1;
+        while(low<n && high>=0){
+            int elem = matrix[low][high];
+            if(elem==target){
+                return true;
+            }
+            else if(elem<target){
+                low = low+1;
+            }
+            else{
+                high = high-1;
+            }
+        }
+        return false;
+    }
+};
